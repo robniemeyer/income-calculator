@@ -22,21 +22,23 @@
                 <input id="discounts" type="text" placeholder="Digite os descontos" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
                 <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('profit-calculator')">Limpar</button>
             </div>
-            <hr class="my-4"> <!-- Single horizontal line after the clear button -->
             <!-- Section 2 -->
             <div id="section-fields-after-clear" class="section space-y-2">
                 <div class="flex justify-between">
                     <label for="net-profit" class="block text-gray-700">Lucro Líquido:</label>
                     <span id="net-profit" class="block text-gray-700">R$ 0,00</span>
                 </div>
+                <hr class="my-4"> <!-- Horizontal line below net profit -->
                 <div class="flex justify-between">
                     <label for="investments" class="block text-gray-700">Investimentos:</label>
                     <span id="investments" class="block text-gray-700">R$ 0,00</span>
                 </div>
+                <hr class="my-4"> <!-- Horizontal line below investments -->
                 <div class="flex justify-between">
                     <label for="cash" class="block text-gray-700">Caixa:</label>
                     <span id="cash" class="block text-gray-700">R$ 0,00</span>
                 </div>
+                <!-- No horizontal line below general -->
                 <div class="flex justify-between">
                     <label for="general" class="block text-gray-700">Geral:</label>
                     <span id="general" class="block text-gray-700">R$ 0,00</span>
