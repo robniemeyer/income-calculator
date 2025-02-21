@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Lucro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="page-container max-w-md w-full p-6 bg-white shadow-md rounded-lg">
+        <header class="text-center mb-6">
+            <h1 class="text-2xl font-bold">Calculadora de Lucro</h1>
+            <p class="text-gray-600">Versão 1.0</p>
+        </header>
+        <main id="profit-calculator" class="space-y-4">
+            <!-- Section 1 -->
+            <div id="section-gross-profit" class="section space-y-2">
+                <label for="gross-profit" class="block text-gray-700">Lucro Bruto:</label>
+                <input id="gross-profit" type="text" placeholder="Digite o lucro bruto" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-gross-profit')">Limpar</button>
+            </div>
+            <hr class="my-4">
+            <!-- Section 2 -->
+            <div id="section-discounts" class="section space-y-2">
+                <label for="discounts" class="block text-gray-700">Descontos:</label>
+                <input id="discounts" type="text" placeholder="Digite os descontos" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-discounts')">Limpar</button>
+            </div>
+            <hr class="my-4"> <!-- Horizontal line -->
+            <!-- Section 3 -->
+            <div id="section-net-profit" class="section space-y-2">
+                <label for="net-profit" class="block text-gray-700">Lucro Líquido:</label>
+                <input id="net-profit" type="text" placeholder="Digite o lucro líquido" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-net-profit')">Limpar</button>
+            </div>
+            <hr class="my-4">
+            <!-- Section 4 -->
+            <div id="section-investments" class="section space-y-2">
+                <label for="investments" class="block text-gray-700">Investimentos:</label>
+                <input id="investments" type="text" placeholder="Digite os investimentos" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-investments')">Limpar</button>
+            </div>
+            <hr class="my-4">
+            <!-- Section 5 -->
+            <div id="section-cash" class="section space-y-2">
+                <label for="cash" class="block text-gray-700">Caixa:</label>
+                <input id="cash" type="text" placeholder="Digite o caixa" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-cash')">Limpar</button>
+            </div>
+            <hr class="my-4">
+            <!-- Section 6 -->
+            <div id="section-general" class="section space-y-2">
+                <label for="general" class="block text-gray-700">Geral:</label>
+                <input id="general" type="text" placeholder="Digite o geral" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('section-general')">Limpar</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
