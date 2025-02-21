@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const fields = ['gross-profit', 'discounts', 'net-profit', 'investments', 'cash', 'general'];
+    const fields = ['gross-profit', 'discounts'];
+    const grossProfitInput = document.getElementById('gross-profit');
+    const discountsInput = document.getElementById('discounts');
+    const netProfitSpan = document.getElementById('net-profit');
+    const investmentsSpan = document.getElementById('investments');
+    const cashSpan = document.getElementById('cash');
+    const generalSpan = document.getElementById('general');
 
     fields.forEach(field => {
         const input = document.getElementById(field);
         input.addEventListener('input', formatBRL);
-        input.addEventListener('change', calculateTotals);
+        input.addEventListener('change', calculateResults);
     });
 
     function formatBRL(event) {
@@ -20,11 +26,26 @@ document.addEventListener('DOMContentLoaded', function() {
         value = value.replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         input.value = `R$ ${value}`;
 
-        calculateTotals();
+        calculateResults();
     }
 
-    function calculateTotals() {
-        // Calculate totals if necessary
+    function calculateResults() {
+        let grossProfit = parseBRL(grossProfitInput.value);
+        let discounts = parseBRL(discountsInput.value);
+        let netProfit = grossProfit - discounts;
+        let investments = netProfit / 3;
+        let cash = netProfit / 6;
+        let general = netProfit - investments - cash;
+
+        netProfitSpan.innerText = netProfit.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        investmentsSpan.innerText = investments.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        cashSpan.innerText = cash.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        generalSpan.innerText = general.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function parseBRL(value) {
+        if (!value) return 0;
+        return parseFloat(value.replace(/[R$ \.]/g, '').replace(',', '.')) || 0;
     }
 
     // Function to clear inputs in a section
@@ -34,6 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let input of inputs) {
             input.value = '';
         }
-        calculateTotals();
+        calculateResults();
     };
 });
