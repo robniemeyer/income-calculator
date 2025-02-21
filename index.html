@@ -15,7 +15,7 @@
         </header>
         <main id="profit-calculator" class="space-y-4">
             <!-- Section 1 -->
-            <div id="section-fields-before-clear" class="section space-y-2">
+            <div id="section-inputs" class="section space-y-2">
                 <label for="gross-profit" class="block text-gray-700">Lucro Bruto:</label>
                 <input id="gross-profit" type="text" placeholder="Digite o lucro bruto" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
                 <label for="discounts" class="block text-gray-700">Descontos:</label>
@@ -23,23 +23,20 @@
                 <button type="button" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="clearInputs('profit-calculator')">Limpar</button>
             </div>
             <!-- Section 2 -->
-            <div id="section-fields-after-clear" class="section space-y-4">
-                <div class="flex justify-between mb-2">
+            <div id="section-results" class="section space-y-4">
+                <div class="flex justify-between p-2 border-b">
                     <label for="net-profit" class="block text-gray-700">Lucro Líquido:</label>
                     <span id="net-profit" class="block text-gray-700">R$ 0,00</span>
                 </div>
-                <hr class="my-2"> <!-- Horizontal line below net profit -->
-                <div class="flex justify-between mb-2">
+                <div class="flex justify-between p-2 border-b">
                     <label for="investments" class="block text-gray-700">Investimentos:</label>
                     <span id="investments" class="block text-gray-700">R$ 0,00</span>
                 </div>
-                <hr class="my-2"> <!-- Horizontal line below investments -->
-                <div class="flex justify-between mb-2">
+                <div class="flex justify-between p-2 border-b">
                     <label for="cash" class="block text-gray-700">Caixa:</label>
                     <span id="cash" class="block text-gray-700">R$ 0,00</span>
                 </div>
-                <hr class="my-2"> <!-- Horizontal line below cash -->
-                <div class="flex justify-between mb-2">
+                <div class="flex justify-between p-2">
                     <label for="general" class="block text-gray-700">Geral:</label>
                     <span id="general" class="block text-gray-700">R$ 0,00</span>
                 </div>
