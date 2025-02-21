@@ -25,14 +25,22 @@
             <hr class="my-4"> <!-- Single horizontal line after the clear button -->
             <!-- Section 2 -->
             <div id="section-fields-after-clear" class="section space-y-2">
-                <label for="net-profit" class="block text-gray-700">Lucro Líquido:</label>
-                <input id="net-profit" type="text" placeholder="Digite o lucro líquido" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
-                <label for="investments" class="block text-gray-700">Investimentos:</label>
-                <input id="investments" type="text" placeholder="Digite os investimentos" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
-                <label for="cash" class="block text-gray-700">Caixa:</label>
-                <input id="cash" type="text" placeholder="Digite o caixa" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
-                <label for="general" class="block text-gray-700">Geral:</label>
-                <input id="general" type="text" placeholder="Digite o geral" onkeyup="formatBRL(this)" class="w-full p-2 border rounded-md">
+                <div class="flex justify-between">
+                    <label for="net-profit" class="block text-gray-700">Lucro Líquido:</label>
+                    <span id="net-profit" class="block text-gray-700">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between">
+                    <label for="investments" class="block text-gray-700">Investimentos:</label>
+                    <span id="investments" class="block text-gray-700">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between">
+                    <label for="cash" class="block text-gray-700">Caixa:</label>
+                    <span id="cash" class="block text-gray-700">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between">
+                    <label for="general" class="block text-gray-700">Geral:</label>
+                    <span id="general" class="block text-gray-700">R$ 0,00</span>
+                </div>
             </div>
         </main>
     </div>
