@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const fields = ['gross-profit', 'discounts', 'net-profit', 'investments', 'cash', 'general'];
-    const differenceMessage = document.getElementById('difference-message');
 
     fields.forEach(field => {
         const input = document.getElementById(field);
